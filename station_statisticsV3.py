@@ -15,7 +15,7 @@ def process():
     station_files = [file for file in range(station_dict.__len__())]
     station_writers = [writer for writer in range(station_dict.__len__())]
     for i in range(station_dict.__len__()):
-        station_files[i] = open("F:\\上海地铁原始数据\\站台统计数据_test" + "\\" + station_names[i] + ".csv", 'a', newline='')
+        station_files[i] = open("F:\\上海地铁原始数据\\站台统计数据_abc" + "\\" + station_names[i] + ".csv", 'a', newline='')
         station_writers[i] = csv.writer(station_files[i], dialect='excel')
 
     # 输入文件
@@ -46,6 +46,8 @@ def process():
                 station_name = station_dict.get(station_code)
                 index = station_names.index(station_name)
     csv_file.close()
+    for i in range(station_dict.__len__()):
+        station_files[i].close()
 
 
 if __name__ == '__main__':
